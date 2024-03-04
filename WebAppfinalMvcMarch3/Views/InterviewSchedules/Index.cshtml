@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WebAppfinalMvcMarch3.Models.InterviewSchedule>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Interview Schedules</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Candidate.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PanelMember.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.interview_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.feedback)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Candidate.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PanelMember.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.interview_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.feedback)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.schedule_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.schedule_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.schedule_id })
+        </td>
+    </tr>
+}
+
+</table>

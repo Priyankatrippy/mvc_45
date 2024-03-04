@@ -1,0 +1,58 @@
+﻿@model WebAppfinalMvcMarch3.Models.Candidate
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Candidate</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.resume)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.resume)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.applied_position)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.applied_position)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.candidate_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

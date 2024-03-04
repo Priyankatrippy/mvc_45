@@ -1,0 +1,50 @@
+﻿@model WebAppfinalMvcMarch3.Models.InterviewSchedule
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>InterviewSchedule</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Candidate.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Candidate.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PanelMember.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PanelMember.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.interview_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.interview_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.feedback)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.feedback)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.schedule_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

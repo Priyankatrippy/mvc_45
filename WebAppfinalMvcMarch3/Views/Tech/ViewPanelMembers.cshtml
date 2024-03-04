@@ -1,0 +1,26 @@
+﻿@model List<WebAppfinalMvcMarch3.Models.PanelMembers>
+@{
+    ViewBag.Title = "ViewPanelMembers";
+}
+
+<h2>View Panel Members</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var member in Model)
+        {
+            <tr>
+                <td>@member.id</td>
+                <td><a href="@Url.Action("ViewCandidateInformation", "Tech", new { candidateId = member.id })">@member.name</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

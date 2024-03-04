@@ -1,0 +1,47 @@
+﻿@model WebAppfinalMvcMarch3.Models.Logins
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@using CaptchaMvc.HtmlHelpers
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Index", "Tech", FormMethod.Post, new { enctype = "multipart/form-data", id = "formCaptcha" }))
+{
+    <div class="container">
+        <div class="row">
+            <div class="form-group">
+                @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label" })
+                @Html.TextBoxFor(model => model.UserName, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                @Html.LabelFor(model => model.UserPassword, htmlAttributes: new { @class = "control-label" })
+                @Html.PasswordFor(model => model.UserPassword, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                @Html.Captcha(refreshText: "Try Another", inputText: "Input the text you see above", length: 5, requiredMessageText: "Is Required Field", addValidationSpan: true)
+                <p class="text-danger">@ViewBag.ErrorMessage</p>
+            </div>
+        </div>
+        <div class="row">
+            <input type="submit" value="Save" name="Save" class="btn btn-primary btn-sm" style="width: 100px;" />
+
+        </div>
+    </div>
+}
+
+
+
+
